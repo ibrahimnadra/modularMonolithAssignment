@@ -10,7 +10,7 @@
 ## Modularity Test Explanation
 In the modularity test, we use the verify() method on the ApplicationModules instance to check whether our package structure follows proper module boundaries. When we run the test, it fails.
 
-![Modulaity Tests Failing](FailedModularityTests.png)
+![Modulaity Tests Failing](Screenshots/FailedModularityTests.png)
 
 ## Why does it fail?
 
@@ -31,5 +31,5 @@ Because of this **cross-module access**, the modularity rules are violated.
 ## Solution: `@NamedInterface` on Validator
 To resolve the issue, we applied `@NamedInterface` to the `OrderValidator` class in the `orders.internal` package. This allows us to expose it as a public API without making the entire package public, thus maintaining encapsulation while satisfying the dependency requirements.
 
-![Modularity Tests Passing](image.png)
+![Modularity Tests Passing](Screenshots/PassedModularityTests.png)
 
